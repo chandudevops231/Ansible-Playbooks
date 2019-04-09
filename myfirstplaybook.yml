@@ -1,0 +1,12 @@
+
+sts: all
+  user: ansadmin
+  become: true
+  connection: ssh
+  gather_facts: no
+  tasks:
+   - name: Uninstall git software on host systems
+     yum: pkg=git state=installed
+   - name: Uninstall httpd software on host systems
+     yum: pkg=httpd state=installed
+
